@@ -16,9 +16,9 @@ MongoDB 3.4
 ## TypeScript
 
 ```typescript
-import { MongoDBIndexInspector } from 'mongodb-index-inspector';
+import { MongoDBIndexInspector, MongoDBFilter } from 'mongodb-index-inspector';
 
-const filter = { username: 'davkorss', password: 'The safest password in the world :3' }
+const filter: MongoDBFilter = { username: 'davkorss', password: 'The safest password in the world :3' };
 const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection, filter);
 inspector.inspect();
 ```
