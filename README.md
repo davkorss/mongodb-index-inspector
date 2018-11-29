@@ -10,7 +10,6 @@ MongoDB 3.4
 
 ## Installation
 
-`npm install mongodb-index-inspector`
 ```sh
 npm install mongodb-index-inspector --save
 npm install mongodb@2.2 --save
