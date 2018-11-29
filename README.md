@@ -7,13 +7,13 @@ Log warnings about the missing MongoDB indexes.
 MongoDB Node.JS Driver 2.2
 MongoDB 3.4
 
-# Install
+## Install
 
 `npm install mongodb-index-inspector`
 
-# Usage
+## Usage
 
-## TypeScript
+### TypeScript
 
 ```typescript
 import { MongoDBIndexInspector, MongoDBFilter } from 'mongodb-index-inspector';
@@ -23,7 +23,7 @@ const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection, f
 inspector.inspect();
 ```
 
-## JavaScript
+### JavaScript
 
 ```javascript
 const MongoDBIndexInspector = require('mongodb-index-inspector').MongoDBIndexInspector
