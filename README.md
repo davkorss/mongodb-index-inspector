@@ -27,7 +27,8 @@ const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection, f
 inspector.inspect();
 ```
 ```sh
-Output should be 'Missing index from filter {"username":"davkorss","password":"The safest password in the world :3"}'
+If the index does not exist, output should be:
+'Missing index from filter {"username":"davkorss","password":"The safest password in the world :3"}'
 ```
 
 ### JavaScript
@@ -40,7 +41,8 @@ const inspector = new MongoDBIndexInspector(collection, filter)
 inspector.inspect()
 ```
 ```sh
-Output should be 'Missing index from filter {"username":"davkorss","password":"The safest password in the world :3"}'
+If the index does not exist, output should be:
+'Missing index from filter {"username":"davkorss","password":"The safest password in the world :3"}'
 ```
 
 ## Test 
