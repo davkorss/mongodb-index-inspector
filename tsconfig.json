@@ -8,9 +8,8 @@
     ],
     "declaration": true,
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",
     "moduleResolution": "node",
-    "sourceMap": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noImplicitThis": true,
@@ -21,6 +20,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "exclude": [
+    "dist",
     "node_modules",
     "coverage",
     "build",
