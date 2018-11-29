@@ -8,9 +8,13 @@ MongoDB Node.JS Driver 2.2
 
 MongoDB 3.4
 
-## Install
+## Installation
 
 `npm install mongodb-index-inspector`
+```sh
+npm install mongodb-index-inspector --save
+npm install mongodb@2.2 --save
+```
 
 ## Usage
 
