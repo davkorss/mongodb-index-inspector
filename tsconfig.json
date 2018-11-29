@@ -6,9 +6,10 @@
       "es6",
       "es7"
     ],
-    "moduleResolution": "node",
-    "rootDir": "./",
+    "declaration": true,
     "outDir": "./dist",
+    "rootDir": "./",
+    "moduleResolution": "node",
     "sourceMap": true,
     "allowJs": true,
     "noImplicitAny": true,
