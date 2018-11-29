@@ -26,6 +26,9 @@ const filter: MongoDBFilter = { username: 'davkorss', password: 'The safest pass
 const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection, filter);
 inspector.inspect();
 ```
+```sh
+Output should be 'Missing index from filter {"username":"davkorss","password":"The safest password in the world :3"}'
+```
 
 ### JavaScript
 
@@ -35,4 +38,12 @@ const MongoDBIndexInspector = require('mongodb-index-inspector').MongoDBIndexIns
 const filter = { username: 'davkorss', password: 'The safest password in the world :3' }
 const inspector = new MongoDBIndexInspector(collection, filter)
 inspector.inspect()
+```
+```sh
+Output should be 'Missing index from filter {"username":"davkorss","password":"The safest password in the world :3"}'
+```
+
+## Test 
+```sh
+npm test
 ```
