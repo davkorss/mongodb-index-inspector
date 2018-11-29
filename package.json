@@ -1,0 +1,25 @@
+{
+  "name": "mongodb-index-inspector",
+  "version": "1.0.0",
+  "description": "Log warnings about the missing MongoDB indexes.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "tsc --noEmit -p . && jest --no-cache --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davkorss/mongodb-index-inspector.git"
+  },
+  "keywords": [
+    "typescript",
+    "mongodb",
+    "index",
+    "inspector"
+  ],
+  "author": "Andrey Ruíz <davkorss@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davkorss/mongodb-index-inspector/issues"
+  },
+  "homepage": "https://github.com/davkorss/mongodb-index-inspector#readme"
+}
