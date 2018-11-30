@@ -1,6 +1,6 @@
 {
   "name": "mongodb-index-inspector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Log warnings about the missing MongoDB indexes.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,8 +26,7 @@
   },
   "homepage": "https://github.com/davkorss/mongodb-index-inspector#readme",
   "dependencies": {
-    "@types/mongodb": "^3.1.15",
-    "mongodb": "^2.2.36"
+    "@types/mongodb": "^2.2.23"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
