@@ -1,6 +1,8 @@
 import { IMongoDBIndexInspector, MongoDBCollectionIndex } from './interfaces/IMongoDBIndexInspector';
 import { Collection } from 'mongodb';
 
+export * from './interfaces/IMongoDBIndexInspector';
+
 export class MongoDBIndexInspector<Filter> implements IMongoDBIndexInspector<Filter> {
     public readonly collection: Collection;
     public readonly filter: Filter;
