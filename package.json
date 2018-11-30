@@ -26,8 +26,7 @@
   },
   "homepage": "https://github.com/davkorss/mongodb-index-inspector#readme",
   "dependencies": {
-    "@types/mongodb": "^3.1.15",
-    "mongodb": "^2.2.36"
+    "@types/mongodb": "^3.1.15"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
