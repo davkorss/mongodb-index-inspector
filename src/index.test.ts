@@ -15,11 +15,9 @@ describe('Inspector', () => {
             indexes: MockIndexes
         }));
         const collection = new MockCollection();
-        const filter: MongoDBFilter = { 'vehicle.id': '59d694e13a07480bf69da74d', 'data.longitude': -75.234567 };
-        const inspector: MongoDBIndexInspector<MongoDBFilter> = new MongoDBIndexInspector<MongoDBFilter>(collection, filter);
+        const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection);
         expect(inspector).toBeInstanceOf(MongoDBIndexInspector);
         expect(inspector.collection).toEqual(collection);
-        expect(inspector.filter).toEqual(filter);
     });
     it('inspect write to stdout', async () => {
         const MockIndexes = jest.fn<MongoDBCollectionIndex[]>(() => ([
@@ -31,9 +29,9 @@ describe('Inspector', () => {
         }));
         const collection = new MockCollection();
         const filter: MongoDBFilter = { 'vehicle.id': '59d694e13a07480bf69da74d' };
-        const inspector: MongoDBIndexInspector<MongoDBFilter> = new MongoDBIndexInspector<MongoDBFilter>(collection, filter);
+        const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection);
         const spy = jest.spyOn(process.stdout, 'write');
-        await inspector.inspect();
+        await inspector.inspect(filter);
         expect(spy.mock.calls).toEqual([[`Missing index from filter ${JSON.stringify(filter)}\n`]]);
     });
     it('inspect without write to stdout', async () => {
@@ -46,9 +44,9 @@ describe('Inspector', () => {
         }));
         const collection = new MockCollection();
         const filter: MongoDBFilter = { 'vehicle.id': '59d694e13a07480bf69da74d', 'data.longitude': -75.234567 };
-        const inspector: MongoDBIndexInspector<MongoDBFilter> = new MongoDBIndexInspector<MongoDBFilter>(collection, filter);
+        const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection);
         const spy = jest.spyOn(process.stdout, 'write');
-        await inspector.inspect();
+        await inspector.inspect(filter);
         expect(spy.mock.calls).toEqual([]);
     });
 });

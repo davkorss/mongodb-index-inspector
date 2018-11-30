@@ -1,25 +1,23 @@
-import { IMongoDBIndexInspector, MongoDBCollectionIndex } from './interfaces/IMongoDBIndexInspector';
+import { IMongoDBIndexInspector, MongoDBCollectionIndex, MongoDBFilter } from './interfaces/IMongoDBIndexInspector';
 import { Collection } from 'mongodb';
 
 export * from './interfaces/IMongoDBIndexInspector';
 
-export class MongoDBIndexInspector<Filter> implements IMongoDBIndexInspector<Filter> {
+export class MongoDBIndexInspector implements IMongoDBIndexInspector {
     public readonly collection: Collection;
-    public readonly filter: Filter;
-    constructor(collection: Collection, filter: Filter) {
+    constructor(collection: Collection) {
         this.collection = collection;
-        this.filter = filter;
     }
-    public async inspect(): Promise<void> {
+    public async inspect(filter: MongoDBFilter): Promise<void> {
         const collectionIndexes: MongoDBCollectionIndex[] = await this.collection.indexes();
-        const foundIndex: MongoDBCollectionIndex | undefined = findIndexThatMatchFilter(collectionIndexes, this.filter);
+        const foundIndex: MongoDBCollectionIndex | undefined = findIndexThatMatchFilter(collectionIndexes, filter);
         if (!foundIndex) {
-            process.stdout.write(`Missing index from filter ${JSON.stringify(this.filter)}\n`);
+            process.stdout.write(`Missing index from filter ${JSON.stringify(filter)}\n`);
         }
     }
 }
 
-function findIndexThatMatchFilter<Filter>(collectionIndexes: MongoDBCollectionIndex[], filter: Filter): MongoDBCollectionIndex | undefined {
+function findIndexThatMatchFilter(collectionIndexes: MongoDBCollectionIndex[], filter: MongoDBFilter): MongoDBCollectionIndex | undefined {
     const foundIndex: MongoDBCollectionIndex | undefined = collectionIndexes.find((index: MongoDBCollectionIndex) => {
         const indexKey = index.key;
         for (const indexKeyProperty of Object.keys(indexKey)) {

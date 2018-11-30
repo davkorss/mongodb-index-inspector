@@ -15,8 +15,7 @@ export interface MongoDBCollectionIndex {
     background?: boolean;
 }
 
-export interface IMongoDBIndexInspector<Filter> {
+export interface IMongoDBIndexInspector {
     readonly collection: Collection;
-    readonly filter: Filter;
-    inspect(collection: Collection, filter: Filter): void;
+    inspect(filter: MongoDBFilter): void;
 }
