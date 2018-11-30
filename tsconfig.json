@@ -23,10 +23,6 @@
     "dist",
     "node_modules",
     "coverage",
-    "build",
-    "webpack"
-  ],
-  "types": [
-    "typePatches"
+    "build"
   ]
 }
