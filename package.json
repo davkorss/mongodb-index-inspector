@@ -11,8 +11,8 @@
     "preversion": "npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags",
-    "patch-linux": "npm version patch && rm -rf dist",
-    "patch-windows": "npm version patch && rm -Force -Recurse dist"
+    "patch-linux": "npm version patch && npm publish && rm -rf dist",
+    "patch-windows": "npm version patch && npm publish && rm -Force -Recurse dist"
   },
   "repository": {
     "type": "git",
