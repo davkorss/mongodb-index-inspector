@@ -10,7 +10,8 @@
     "test:watch": "jest --no-cache --coverage --watch",
     "preversion": "npm test",
     "version": "npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "patch": "npm version patch"
   },
   "repository": {
     "type": "git",
