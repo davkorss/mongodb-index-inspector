@@ -22,9 +22,13 @@ npm install mongodb@2.2 --save
 ```typescript
 import { MongoDBIndexInspector, MongoDBFilter } from 'mongodb-index-inspector';
 
-const filter: MongoDBFilter = { username: 'davkorss', password: 'The safest password in the world :3' };
-const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection);
-inspector.inspect(filter);
+async function inspect (): void {
+    const filter: MongoDBFilter = { username: 'davkorss', password: 'The safest password in the world :3' };
+    const inspector: MongoDBIndexInspector = new MongoDBIndexInspector(collection);
+    await inspector.inspect(filter);
+}
+
+inspect();
 ```
 ```sh
 If the index does not exist, output should be:
@@ -36,9 +40,13 @@ If the index does not exist, output should be:
 ```javascript
 const MongoDBIndexInspector = require('mongodb-index-inspector').MongoDBIndexInspector
 
-const filter = { username: 'davkorss', password: 'The safest password in the world :3' }
-const inspector = new MongoDBIndexInspector(collection)
-inspector.inspect(filter)
+async function inspect () {
+    const filter = { username: 'davkorss', password: 'The safest password in the world :3' }
+    const inspector = new MongoDBIndexInspector(collection)
+    await inspector.inspect(filter)
+}
+
+inspect()
 ```
 ```sh
 If the index does not exist, output should be:
