@@ -1,6 +1,6 @@
 import { Collection } from 'mongodb';
 
-export type MongoDBFilter = Object;
+export type MongoDBFilter = object;
 
 interface MongoDBCollectionIndexKey {
     [propName: string]: string | number;
